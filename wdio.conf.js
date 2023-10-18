@@ -25,7 +25,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/android/test.e2e.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -55,11 +55,21 @@ exports.config = {
     //
     capabilities: [{
         // capabilities for local Appium web tests on an Android Emulator
-        platformName: 'Android',
-        browserName: 'Chrome',
-        'appium:deviceName': 'Android GoogleAPI Emulator',
-        'appium:platformVersion': '12.0',
-        'appium:automationName': 'UiAutomator2'
+        "appium:platformName": "Android", // or "iOS"
+        "appium:platformVersion": "11.0",
+        "appium:deviceName": "TestDevice", // or "iPhone Simulator"
+        "appium:automationName": "UIAutomator2", // or "XCUITest"
+        "appium:app": path.join(process.cwd(), "./app/android/ForaMobileAndroid-1.38.7-google-mtest-fora.apk"),
+        "appium:appPackage": "ua.fora.android.mtest",
+        "appium:appActivity": "ua.fora.android.ui.activity.WelcomeActivity",
+        "appium:unicodeKeyboard": true,
+        "appium:enableVNC": true,
+        "appium:noReset": true,
+        "appium:autoGrantPermissions": true,
+        "appium:autoAcceptAlerts": true,
+        "appium:nativeWebScreenshot": true,
+        "appium:gpsEnabled": true,
+        "appium:autoGrantPermissions": true,
     }],
 
     //
