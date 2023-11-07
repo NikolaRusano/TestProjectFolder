@@ -1,6 +1,22 @@
 const path = require('path');
+const reportportal = require("wdio-reportportal-reporter");
+const RpService = require("wdio-reportportal-service");
+
+const conf = {
+    reportPortalClientConfig: {
+      token: "0a8000b8-3c88-4ca4-8260-cfa555b15998",
+      endpoint: "https://rp.fozzy.lan/api/v1",
+      launch: "m.rusanov_TEST_EXAMPLE",
+      project: "foraandroid",
+      attributes: [{ key: "Fora", value: "admin" }],
+    },
+    autoAttachScreenshots: true,
+  };
 
 exports.config = {
+    before: function () {
+        process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+      },
     //
     // ====================
     // Runner Configuration
@@ -118,7 +134,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['appium'],
+    services: ["appium", [RpService, {}]],
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -141,7 +157,7 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: ["spec", [reportportal, conf]],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/

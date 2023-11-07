@@ -1,6 +1,5 @@
 import { mPhone, otp } from "../../loginconstansts//logincontstantsfile";
-
-
+const reportportal = require("wdio-reportportal-reporter");
 
 class Authorization {
 
@@ -170,9 +169,11 @@ class Authorization {
     try {
       const isDisplayed = await element.isDisplayed();
       console.log("isDisplayed:", isDisplayed); // Log the actual value
+      reportportal.sendLog('info', "isDisplayed:"+ isDisplayed); // Log the actual value
       return isDisplayed;
     } catch (error) {
       console.error("Error while checking element visibility:", error);
+      reportportal.sendLog('info', "Error while checking element visibility:");
       return false;
     }
   }
@@ -221,6 +222,7 @@ class Authorization {
     const isSkipButtonPresent = await this.isElementPresent(this.skipAuthPageOwnCount);
     
     if(isSkipButtonPresent){
+      reportportal.sendLog('info', 'Клік кнопки пропустити');
       this.tapAndroidElement(this.skipAuthPageOwnCount);
       await driver.pause(5000);
     }
@@ -299,3 +301,5 @@ async backAndLogOutFromAccount() {
 }
 
 export default new Authorization();
+
+//module.exports = new Authorization();
