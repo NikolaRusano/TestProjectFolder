@@ -4,11 +4,11 @@ const RpService = require("wdio-reportportal-service");
 
 const conf = {
     reportPortalClientConfig: {
-      token: "Ваш_токен",
-      endpoint: "https://ваш_сервер/api/v1",
-      launch: "m.rusanov_TEST_EXAMPLE",
-      project: "foraandroid",
-      attributes: [{ key: "Fora", value: "admin" }],
+    token: "0a8000b8-3c88-4ca4-8260-cfa555b15998",
+    endpoint: "https://rp.fozzy.lan/api/v1",
+    launch: "m.rusanov_TEST_EXAMPLE",
+    project: "foraandroid",
+    attributes: [{ key: "Fora", value: "admin" }],
     },
     autoAttachScreenshots: true,
   };
@@ -23,7 +23,7 @@ exports.config = {
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
-    port: 4723,
+    //port: 4723,
     //
     // ==================
     // Specify Test Files
@@ -40,9 +40,9 @@ exports.config = {
     // then the current working directory is where your `package.json` resides, so `wdio`
     // will be called from there.
     //
-    specs: [
+    /*specs: [
         './test/specs/android/01_authorization_splash_tests.js'
-    ],
+    ],*/
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -69,23 +69,7 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        // capabilities for local Appium web tests on an Android Emulator
-        "appium:platformName": "Android", // or "iOS"
-        "appium:platformVersion": "11.0",
-        "appium:deviceName": "TestDevice", // or "iPhone Simulator"
-        "appium:automationName": "UIAutomator2", // or "XCUITest"
-        "appium:app": path.join(process.cwd(), "./app/android/ForaMobileAndroid-1.38.7-google-mtest-fora.apk"),
-        "appium:appPackage": "ua.fora.android.mtest",
-        "appium:appActivity": "ua.fora.android.ui.activity.SplashActivity",
-        "appium:unicodeKeyboard": true,
-        "appium:enableVNC": true,
-        "appium:noReset": true,
-        "appium:autoGrantPermissions": true,
-        "appium:autoAcceptAlerts": true,
-        "appium:nativeWebScreenshot": true,
-        "appium:gpsEnabled": true,
-    }],
+    
 
     //
     // ===================
