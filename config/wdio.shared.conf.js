@@ -4,11 +4,11 @@ const RpService = require("wdio-reportportal-service");
 
 const conf = {
     reportPortalClientConfig: {
-    token: "0a8000b8-3c88-4ca4-8260-cfa555b15998",
-    endpoint: "https://rp.fozzy.lan/api/v1",
-    launch: "m.rusanov_TEST_EXAMPLE",
-    project: "foraandroid",
-    attributes: [{ key: "Fora", value: "admin" }],
+    token: "Ваш_токен",
+      endpoint: "https://ваш_сервер/api/v1",
+      launch: "m.rusanov_TEST_EXAMPLE",
+      project: "foraandroid",
+      attributes: [{ key: "Fora", value: "admin" }],
     },
     autoAttachScreenshots: true,
   };
