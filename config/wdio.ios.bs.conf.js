@@ -1,8 +1,8 @@
 const { config } = require('./wdio.shared.conf');
 const RpService = require("wdio-reportportal-service");
 
-config.user = 'mrusanov_WP5GC3';
-config.key = '3V5pqxaxwKycyCnzV16q';
+config.user = 'user_name';
+config.key = 'USErkeyuserkeyuserkey';
 
 config.services = [];
 config.services.push('browserstack',  [RpService, {}]);
@@ -18,7 +18,7 @@ config.capabilities = [
    "appium:platformVersion": "11.0",
    "appium:deviceName": "TestDevice", // or "iPhone Simulator"
    "appium:automationName": "UIAutomator2", // or "XCUITest"
-   "appium:app": "bs://c14b9de629a65de8e9963f963c144fff515a027d",
+   "appium:app": "bs://1b09421e5db87a2875b2c57fe0d88c9bca1e024e",
    "appium:appPackage": "ua.fora.android.mtest",
    "appium:appActivity": "ua.fora.android.ui.activity.SplashActivity",
    "appium:unicodeKeyboard": true,
