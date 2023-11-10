@@ -1,15 +1,15 @@
-const path = require('path');
 const { config } = require('./wdio.shared.conf');
 const RpService = require("wdio-reportportal-service");
 
-config.port = 4723;
+config.user = 'mrusanov_WP5GC3';
+config.key = '3V5pqxaxwKycyCnzV16q';
 
 config.services = [];
-config.services.push('appium',  [RpService, {}]);
+config.services.push('browserstack',  [RpService, {}]);
 
 
 config.specs = [
-    "./test/specs/ios/01_authorization_splash_tests.js"
+    "./../test/specs/ios/01_authorization_splash_tests.js"
 ];
 
 config.capabilities = [
@@ -18,7 +18,7 @@ config.capabilities = [
    "appium:platformVersion": "11.0",
    "appium:deviceName": "TestDevice", // or "iPhone Simulator"
    "appium:automationName": "UIAutomator2", // or "XCUITest"
-   "appium:app": path.join(process.cwd(), "./app/android/ForaMobileAndroid-1.38.7-google-mtest-fora.apk"),
+   "appium:app": "bs://c14b9de629a65de8e9963f963c144fff515a027d",
    "appium:appPackage": "ua.fora.android.mtest",
    "appium:appActivity": "ua.fora.android.ui.activity.SplashActivity",
    "appium:unicodeKeyboard": true,

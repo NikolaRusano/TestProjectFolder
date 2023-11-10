@@ -1,8 +1,7 @@
-const path = require('path');
 const reportportal = require("wdio-reportportal-reporter");
-const RpService = require("wdio-reportportal-service");
 
-const conf = {
+
+/*const conf = {
     reportPortalClientConfig: {
     token: "0a8000b8-3c88-4ca4-8260-cfa555b15998",
     endpoint: "https://rp.fozzy.lan/api/v1",
@@ -11,18 +10,18 @@ const conf = {
     attributes: [{ key: "Fora", value: "admin" }],
     },
     autoAttachScreenshots: true,
-  };
+  };*/
 
 exports.config = {
-    before: function () {
+    /*before: function () {
         process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-      },
+      },*/
     //
     // ====================
     // Runner Configuration
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
-    runner: 'local',
+    //runner: 'local',
     //port: 4723,
     //
     // ==================
@@ -102,7 +101,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: '',
+    //baseUrl: '',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -118,7 +117,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ["appium", [RpService, {}]],
+  
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -141,7 +140,7 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ["spec", [reportportal, conf]],
+    //reporters: ["spec", [reportportal, conf]],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/

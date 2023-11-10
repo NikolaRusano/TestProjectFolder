@@ -1,7 +1,12 @@
 const path = require('path');
 const { config } = require('./wdio.shared.conf');
+const RpService = require("wdio-reportportal-service");
 
 config.port = 4723;
+
+config.services = [];
+config.services.push('appium',  [RpService, {}]);
+
 
 config.specs = [
     "./../test/specs/android/01_authorization_splash_tests.js"
