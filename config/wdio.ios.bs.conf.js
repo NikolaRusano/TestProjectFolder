@@ -14,20 +14,14 @@ config.specs = [
 
 config.capabilities = [
     {
-   "appium:platformName": "Android", // or "iOS"
-   "appium:platformVersion": "11.0",
-   "appium:deviceName": "TestDevice", // or "iPhone Simulator"
-   "appium:automationName": "UIAutomator2", // or "XCUITest"
+   "platformName": "ios",
+   "appium:platformVersion" : "14.0",
+   "appium:deviceName" : "iPhone 12",
+   "appium:automationName": "XCUITest",
    "appium:app": "bs://1b09421e5db87a2875b2c57fe0d88c9bca1e024e",
-   "appium:appPackage": "ua.fora.android.mtest",
-   "appium:appActivity": "ua.fora.android.ui.activity.SplashActivity",
-   "appium:unicodeKeyboard": true,
-   "appium:enableVNC": true,
-   "appium:noReset": true,
-   "appium:autoGrantPermissions": true,
-   "appium:autoAcceptAlerts": true,
-   "appium:nativeWebScreenshot": true,
-   "appium:gpsEnabled": true,
+   "appium:appPackage": "ua.fora.android.mtest",  
+   "appium:autoGrantPermission": true,
+   "appium:unicodeKeyboard": true
    }
 ];
    
